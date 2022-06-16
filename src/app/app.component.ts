@@ -39,5 +39,6 @@ export class AppComponent {
 
   constructor() {
     this.navActive = true
+    this.navHiding = true
   }
 }

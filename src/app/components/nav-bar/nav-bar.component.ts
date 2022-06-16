@@ -8,17 +8,19 @@ import {Link} from "./nav-bar.model";
 })
 export class NavBarComponent implements OnInit {
   @Input() links?: Link[];
-  @Input() active?: boolean;
-  @Input() hiding?: boolean
-  hovered: boolean = false;
-  showMenu: boolean = false
+  @Input() canHide?: boolean = false;
+  @Input() fixed?: boolean = false;
+  hiding?: boolean = true;
+  showMenu: boolean = false;
+  active?: boolean = false;
 
   event(){
-    this.active = true;
-    console.log('here')
+    console.log(this.hiding)
   }
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
