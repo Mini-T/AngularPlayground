@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'AngularPlayground';
   navActive?: boolean;
   navHiding?: boolean;
+  myLogo?: string = ''
   links: Link[] =
     [
       {
@@ -32,9 +33,6 @@ export class AppComponent {
         url: "/home",
         label: "Home"
       },
-
-
-
     ]
 
   constructor() {

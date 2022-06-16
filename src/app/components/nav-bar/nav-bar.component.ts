@@ -10,7 +10,8 @@ export class NavBarComponent implements OnInit {
   @Input() links?: Link[];
   @Input() canHide?: boolean = false;
   @Input() fixed?: boolean = false;
-  hiding?: boolean = true;
+  @Input() logoPath?: string
+  hiding!: boolean
   showMenu: boolean = false;
   active?: boolean = false;
 
@@ -19,9 +20,16 @@ export class NavBarComponent implements OnInit {
   }
 
   constructor() {
-
+    this.initComponent();
   }
 
+  initComponent(){
+    if (this.canHide){
+      this.hiding = true
+    } else {
+      this.hiding = false
+    }
+  }
   ngOnInit(): void {
   }
 
