@@ -1,0 +1,32 @@
+.card {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  width: fit-content;
+  min-width: 300px;
+  height: fit-content;
+  padding: 2rem;
+  display: flex;
+}
+.WelcomeScreen{
+  width: fit-content;
+  height: auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+
+}
+.titles{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h1, h2{
+    height: fit-content;
+    width: fit-content;
+    margin: 0.5rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="floatingNav" [ngClass]="active ? 'active' : ''">
+  <nav [ngClass]="active ? 'active' : ''">
+    <div class="content">
+      <button mat-icon-button class="menuBtn" (click)="showMenu ? showMenu = false : showMenu = true"><mat-icon>menu</mat-icon></button>
+      <div class="menuDesktop">
+        <mat-list class="links">
+          <mat-list-item *ngFor="let link of links">
+            <button mat-button [routerLink]="link.url">{{ link.label }}</button>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <button mat-raised-button color="primary">login</button>
+    </div>
+  </nav>
+</div>
+<div *ngIf="showMenu" class="menuMobile">
+  <mat-list class="links">
+    <mat-list-item *ngFor="let link of links">
+      <button mat-button [routerLink]="link.url">{{ link.label }}</button>
+    </mat-list-item>
+  </mat-list>
+</div>
