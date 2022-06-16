@@ -3,3 +3,32 @@ main {
   min-height: 100%;
   overflow-x: hidden;
 }
+.displayComponents{
+  display: grid;
+  margin: auto;
+  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  height: max-content;
+  grid-template-areas:  "carousel carousel carousel"
+                        ". . ."
+                        ". . .";
+}
+.headTitle {
+
+}
+app-carousel{
+  grid-area: carousel;
+}
+
+@media screen and (max-width: 700px) {
+  .displayComponents {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+}

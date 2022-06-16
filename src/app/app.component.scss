@@ -5,22 +5,3 @@
   display: flex;
   flex-direction: column;
 }
-.displayComponents{
-  display: grid;
-  margin: auto;
-  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-}
-
-@media screen and (max-width: 700px) {
-  .displayComponents {
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
-}

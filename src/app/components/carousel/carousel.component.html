@@ -1,0 +1,13 @@
+<div class="carousel-window">
+    <div class="draggable" mouse>
+      <mat-card *ngFor="let item of itemsToDisplay" class="carousel-card">
+        <mat-card-title *ngIf="item.title">
+          <h1> {{item.title}}</h1>
+        </mat-card-title>
+        <img mat-card-image src="{{item.image}}" alt="" *ngIf="item.image">
+      <mat-card-content *ngIf="item.content">
+        <p>{{item.content}}</p>
+      </mat-card-content>
+      </mat-card>
+    </div>
+</div>

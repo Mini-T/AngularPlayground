@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CarouselItem} from "../carousel/carousel.model";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,53 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  itemsToDisplay: CarouselItem[] = [
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    },
+    {
+      content: 'big message',
+      image: '../../assets/images/logo.svg',
+      title: "Big titre"
+    }
+
+  ]
   constructor() {
   }
 

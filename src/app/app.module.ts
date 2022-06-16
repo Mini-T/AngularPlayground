@@ -14,6 +14,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {FormsModule} from "@angular/forms";
     ChartComponent,
     NavBarComponent,
     HomeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

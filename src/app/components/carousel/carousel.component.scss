@@ -1,0 +1,19 @@
+.carousel-window {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.draggable {
+  overflow-x: hidden;
+  display: flex;
+  width: 100%;
+  overflow: auto;
+}
+
+.carousel-card {
+  overflow-x: hidden;
+  padding: 20Px;
+  margin: 15px;
+  min-width:200px;
+  height: auto;
+}
