@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CarouselItem} from "../carousel/carousel.model";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
@@ -55,7 +56,11 @@ export class HomeComponent implements OnInit {
     }
 
   ]
-  constructor() {
+  constructor(private http: HttpClient) {
+  }
+
+  getAllPosts(){
+    console.log(this.http.get('/api/posts').subscribe())
   }
 
   ngOnInit(): void {

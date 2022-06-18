@@ -1,5 +1,5 @@
-export interface CarouselItem{
-  content:string,
-  image: string,
-  title: string
+export interface CarouselItem {
+  title?: string,
+  content?: string,
+  image?: string,
 }
