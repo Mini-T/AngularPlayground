@@ -1,5 +1,6 @@
 <div class="carousel-window">
-    <div class="draggable" mouse>
+  <mat-icon class="navArrows" id="left">chevron_left</mat-icon>
+    <div class="draggable">
       <mat-card *ngFor="let item of itemsToDisplay" class="carousel-card">
         <mat-card-title *ngIf="item.title">
           <h1> {{item.title}}</h1>
@@ -10,4 +11,4 @@
       </mat-card-content>
       </mat-card>
     </div>
-</div>
+  <mat-icon class="navArrows" id="right">chevron_right</mat-icon></div>

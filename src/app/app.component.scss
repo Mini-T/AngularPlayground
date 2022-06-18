@@ -1,5 +1,7 @@
+@import "src/assets/shared/variables";
+
 .home-theme {
-  background: #2f4f75;
+  background: $background-theme;
   width: 100%;
   height: 100%;
   display: flex;

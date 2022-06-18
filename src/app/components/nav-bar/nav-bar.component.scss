@@ -1,4 +1,6 @@
-nav{
+@import 'src/assets/shared/variables.scss';
+
+nav {
   transition: all ease 300ms;
   width: 100%;
   margin-top: 0px;
@@ -52,21 +54,33 @@ nav{
   top: -80px;
   left: 0;
   &:hover {
-    & > nav.translateNav {
+    & > .translateNav {
       transform: translateY(80px);
       opacity: 100%;
     }
     & > nav {
       background: rgba(255, 255, 255, 0.16);
       box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 10px;
+      &.fixed {
+        background: $background-theme
+      }
     }
+  }
+  & > .fixed {
+    background: $background-theme
   }
 }
 .lockedNav {
   transform: translateY(80px);
+  position: relative;
   &.fixed {
     position: fixed;
+    z-index: 1;
+    &:hover{
+      &nav { background: $background-theme}
+    }
   }
+
 }
 .links {
   display: flex;

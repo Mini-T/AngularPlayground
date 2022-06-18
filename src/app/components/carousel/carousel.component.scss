@@ -6,14 +6,28 @@
 .draggable {
   overflow-x: hidden;
   display: flex;
-  width: 100%;
-  overflow: auto;
+  max-width: available;
 }
 
 .carousel-card {
   overflow-x: hidden;
-  padding: 20Px;
+  padding: 20px;
   margin: 15px;
   min-width:200px;
   height: auto;
+}
+
+.navArrows{
+  position: absolute;
+  top: 400px;
+  z-index: 1;
+  font-size: 3rem;
+  color: white;
+  padding: 5px;
+  &#left{
+    left: 28vw;
+  }
+  &#right{
+    right: 28vw;
+  }
 }

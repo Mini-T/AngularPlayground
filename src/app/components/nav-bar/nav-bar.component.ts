@@ -11,7 +11,7 @@ export class NavBarComponent implements OnInit {
   @Input() canHide?: boolean = false;
   @Input() fixed?: boolean = false;
   @Input() logoPath?: string
-  hiding!: boolean
+  hiding: boolean = true;
   showMenu: boolean = false;
   active?: boolean = false;
 

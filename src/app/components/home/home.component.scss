@@ -6,12 +6,13 @@ main {
 .displayComponents{
   display: grid;
   margin: auto;
-  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  grid-template: 1fr 1fr 1fr/ 30vw 40vw 30vw;
   justify-content: center;
   align-items: center;
-  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 10px;
   height: max-content;
-  grid-template-areas:  "carousel carousel carousel"
+  grid-template-areas:  ". carousel ."
                         ". . ."
                         ". . .";
 }
