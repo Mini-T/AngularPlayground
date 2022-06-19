@@ -3,5 +3,8 @@
   <div class="displayComponents">
     <app-carousel [itemsToDisplay]="itemsToDisplay"></app-carousel>
     <button mat-button (click)="getAllPosts()">get</button>
+    <div *ngIf="data">
+      {{ data[0] | json}}
+    </div>
   </div>
 </main>

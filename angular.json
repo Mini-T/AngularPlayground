@@ -74,11 +74,11 @@
           "configurations": {
             "production": {
               "browserTarget": "AngularPlayground:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "proxyConfig": "./src/proxy.conf.json"
             },
             "development": {
               "browserTarget": "AngularPlayground:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "proxyConfig": "./src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
