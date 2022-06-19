@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
   getAllPosts(){
     let data: Object[];
     // @ts-ignore
-    this.http.get('http://localhost:8000/api/posts').subscribe((content: Array<Object>) => {
+    this.http.get('/api/posts').subscribe((content: Array<Object>) => {
       data = content;
       this.data = data
     })
