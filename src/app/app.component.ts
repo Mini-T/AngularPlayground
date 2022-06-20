@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Link} from "./components/nav-bar/nav-bar.model";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
