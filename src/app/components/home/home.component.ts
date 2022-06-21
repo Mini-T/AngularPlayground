@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CarouselItem} from "../carousel/carousel.model";
 import {HttpClient} from "@angular/common/http";
+import {UserModel} from "../auth/user.model";
+import {PostFormService} from "../post-form/post-form.service";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -9,9 +12,10 @@ import {HttpClient} from "@angular/common/http";
 })
 export class HomeComponent implements OnInit {
 
+  data: Object;
   itemsToDisplay: CarouselItem[] = [
     {
-      content: 'big message',
+      content: 'lorempkoizejhijvzerklvlrjhgtyuknbvdfghjkljhgffghjkkjhgfdxcghjbklmkjhigyfrdseqsdftghjklmkjihugyftrdsedrfghjklpokijuytrezqsrdcftvgybhunji,kijnbuytreszsxdcfgvhnj,knburecftgvhjn,kjiubydtrexsxdcgfvhnjbvfdrxsedcgfvhjnvfcdxsdcgfvbhjnk hfdxgcv b,',
       image: '../../assets/images/logo.svg',
       title: "Big titre"
     },
@@ -56,14 +60,21 @@ export class HomeComponent implements OnInit {
     }
 
   ]
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private postService: PostFormService) {
+    this.data = []
   }
 
-  getAllPosts(){
-    console.log(this.http.get('/api/posts').subscribe())
-  }
+showData(){
+    let data: Object;
+    // @ts-ignore
+  this.postService.getAllPosts().pipe(map(response => response = response['hydra:member'])).subscribe(posts => {
+      data = posts;
+      this.data = data
+  })
+}
 
   ngOnInit(): void {
+
   }
 
 }

@@ -1,14 +1,18 @@
 <div class="carousel-window">
-  <mat-icon class="navArrows" id="left">chevron_left</mat-icon>
-    <div class="draggable">
+  <button class="navArrows" id="left" (click)="scrollCarousel('left')" mat-button><mat-icon class="mat-icon">chevron_left</mat-icon></button>
+  <div style="overflow: hidden">
+<div class="draggable" [ngStyle]="{'transform': 'translateX(' + scrollValue + 'px'}">
       <mat-card *ngFor="let item of itemsToDisplay" class="carousel-card">
-        <mat-card-title *ngIf="item.title">
+        <mat-card-title class="card-title" *ngIf="item.title">
           <h1> {{item.title}}</h1>
         </mat-card-title>
-        <img mat-card-image src="{{item.image}}" alt="" *ngIf="item.image">
-      <mat-card-content *ngIf="item.content">
+        <img class="card-img" mat-card-image [src]="item.image" *ngIf="item.image">
+      <mat-card-content class="card-content" *ngIf="item.content">
         <p>{{item.content}}</p>
       </mat-card-content>
       </mat-card>
     </div>
-  <mat-icon class="navArrows" id="right">chevron_right</mat-icon></div>
+  </div>
+  <button class="navArrows" id="right" mat-button (click)="scrollCarousel('right')"><mat-icon class="mat-icon">chevron_right</mat-icon></button>
+
+</div>

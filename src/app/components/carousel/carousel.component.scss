@@ -1,34 +1,68 @@
 .carousel-window {
   background-color: rgba(0, 0, 0, 0.07);
-  width: 100%;
+  max-width: 100%;
+  min-width:auto;
   display: flex;
   overflow: hidden;
 }
 .draggable {
-  overflow-x: hidden;
+  transition: all 300ms ease;
   display: flex;
-  max-width: available;
+  max-width: max-content;
 }
+
 
 .carousel-card {
   overflow-x: hidden;
-  padding: 20px;
+  padding: 10px;
+  min-width:300px;
+  max-width: 300px;
   margin: 15px;
-  min-width:200px;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-img {
+  background-size: cover;
+  background-position: center;
+  min-height: 100px;
+  max-height: 1000px;
+  width: auto;
+}
+.card-content{
+width: 100%;
+  padding: 3px;
+  word-break: break-word;
+
+}
+.card-title{
+  font-size: 16px;
+  width: 100%;
+  display: flex;justify-content: center;
 }
 
-.navArrows{
-  position: absolute;
-  top: 400px;
+button.navArrows{
+  position: relative;
+  stroke-opacity: 50%;
   z-index: 1;
-  font-size: 3rem;
   color: white;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   &#left{
-    left: 28vw;
+    left: 10px;
   }
   &#right{
-    right: 28vw;
+    right: 10px;
   }
+  & > .mat-icon{
+    font-size: 4rem;
+  }
+}
+
+.card-content {
 }
