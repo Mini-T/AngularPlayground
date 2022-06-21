@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     {
       content: 'big message',
       image: '../../assets/images/logo.svg',
-      title: "Big titre"
+      title: "LAAAAAAAAAST"
     }
 
   ]

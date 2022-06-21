@@ -13,7 +13,7 @@ main {
   align-items: center;
   grid-auto-rows: 1fr;
   grid-gap: 10px;
-  grid-template-areas:  ". carousel carousel"
+  grid-template-areas:  "carousel carousel carousel"
                         ". . ."
                         ". . .";
 }
