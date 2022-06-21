@@ -22,17 +22,9 @@ export class AppComponent {
         label: "Welcome Screen"
       },
       {
-        url: "/home",
-        label: "Home"
-      },
-      {
-        url: "/home",
-        label: "Home"
-      },
-      {
-        url: "/home",
-        label: "Home"
-      },
+        url: "post",
+        label: ""
+      }
     ]
 
   constructor() {

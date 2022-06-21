@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Link} from "./nav-bar.model";
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import {AuthComponent} from "../auth/auth.component";
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,8 +22,11 @@ export class NavBarComponent implements OnInit {
     console.log(this.hiding)
   }
 
-  constructor() {
+  constructor(private bottomSheet: MatBottomSheet) {
     this.initComponent();
+  }
+  openBottomSheet(): void {
+    this.bottomSheet.open(AuthComponent);
   }
 
   initComponent(){
