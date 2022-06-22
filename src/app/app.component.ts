@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Link} from "./components/nav-bar/nav-bar.model";
+import {UserService} from "./components/auth/user.service";
+import {UserModel} from "./components/auth/user.model";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,9 @@ export class AppComponent {
   title = 'AngularPlayground';
   navActive?: boolean;
   navHiding?: boolean;
-  myLogo?: string = ''
+  myLogo?: string = '../../../assets/images/'
+  userModel?: UserModel;
+  isLoggedIn: boolean = false
   links: Link[] =
     [
       {
@@ -26,8 +30,12 @@ export class AppComponent {
       }
     ]
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.navActive = true
     this.navHiding = true
+    this.userService.getUser().subscribe(user => {
+      this.userModel = user;
+      this.isLoggedIn = true;
+    });
   }
 }

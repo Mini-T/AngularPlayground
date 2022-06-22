@@ -1,0 +1,43 @@
+<div
+  class="server-status-display-parent"
+  [ngClass]="'obHeader'"
+
+>
+  <div
+    *ngIf="data.length != 0; else nodata"
+    class="server-status-top"
+    (click)="openComponentSheetMenu()"
+  >
+    <p class="plaintext">
+      Servers : {{ data.length }}
+    </p>
+
+    <div class="indicators">
+      <i
+        *ngIf="statuses['Running']"
+        class="fas fa-check icons running"
+        matTooltip="{{ statuses['Running'] }} Server Running"
+      ></i>
+
+      <i
+        *ngIf="statuses['Warning']"
+        class="fas fa-exclamation-triangle icons warning"
+        matTooltip="{{ statuses['Warning'] }} Server Warnings"
+      ></i>
+
+      <i
+        *ngIf="statuses['Down']"
+        class="fas fa-times-circle icons down"
+        matTooltip="{{ statuses['Down']}} Server Down"
+      ></i>
+    </div>
+  </div>
+  <ng-template #nodata>
+    <div
+      class="server-status-top nulldata"
+      style="justify-content: center; color: grey"
+    >
+      no data provided
+    </div>
+  </ng-template>
+</div>

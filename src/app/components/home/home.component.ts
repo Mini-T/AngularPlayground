@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CarouselItem} from "../carousel/carousel.model";
 import {HttpClient} from "@angular/common/http";
-import {UserModel} from "../auth/user.model";
 import {PostFormService} from "../post-form/post-form.service";
 import {map} from "rxjs";
+import {health, ServerStatusData} from "../server-status/server-status-data";
 
 @Component({
   selector: 'app-home',
@@ -13,49 +13,95 @@ import {map} from "rxjs";
 export class HomeComponent implements OnInit {
 
   data: Object;
+  serversData: ServerStatusData[] = [
+    {
+      name: 'Server1',
+      health: health.RUNNING,
+      info: {
+        artifact: 'some text',
+        name: 'name',
+        time: '2022-03-02T15:31:42.167Z',
+        version: '1.2.1',
+        group: 'ch.admin.zas.transverse'
+      }
+    },
+    {
+      name: 'Server2',
+      health: health.RUNNING,
+      info: {
+        artifact: 'some text',
+        name: 'name',
+        time: '2022-03-02T15:31:42.167Z',
+        version: '1.2.1',
+        group: 'ch.admin.zas.transverse'
+      }
+    },
+    {
+      name: 'Server3',
+      health: health.WARNING,
+      info: {
+        artifact: 'some text',
+        name: 'name',
+        time: '2022-03-02T15:31:42.167Z',
+        version: '1.2.1',
+        group: 'ch.admin.zas.transverse'
+      }
+    },
+    {
+      name: 'Server4',
+      health: health.DOWN,
+      info: {
+        artifact: 'some text',
+        name: 'name',
+        time: '2022-03-02T15:31:42.167Z',
+        version: '1.2.1',
+        group: 'ch.admin.zas.transverse'
+      }
+    }
+  ]
   itemsToDisplay: CarouselItem[] = [
     {
       content: 'lorempkoizejhijvzerklvlrjhgtyuknbvdfghjkljhgffghjkkjhgfdxcghjbklmkjhigyfrdseqsdftghjklmkjihugyftrdsedrfghjklpokijuytrezqsrdcftvgybhunji,kijnbuytreszsxdcfgvhnj,knburecftgvhjn,kjiubydtrexsxdcgfvhnjbvfdrxsedcgfvhjnvfcdxsdcgfvbhjnk hfdxgcv b,',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },    {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "Big titre"
     },
     {
       content: 'big message',
-      image: '../../assets/images/logo.svg',
+      image: '../../assets/images/BORDERLESS.svg',
       title: "LAAAAAAAAAST"
     }
 

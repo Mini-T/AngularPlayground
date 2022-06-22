@@ -1,0 +1,14 @@
+<div>
+  <mat-form-field>
+    <input type="email" matInput required [(ngModel)]="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" required matInput [(ngModel)]="username">
+  </mat-form-field>
+<mat-form-field>
+    <input type="email" required matInput [(ngModel)]="password">
+  </mat-form-field>
+<button mat-raised-button color="primary" (click)="submit()">
+  Register
+</button>
+</div>

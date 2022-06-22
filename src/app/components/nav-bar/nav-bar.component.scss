@@ -59,15 +59,15 @@ nav {
       opacity: 100%;
     }
     & > nav {
-      background: rgba(255, 255, 255, 0.16);
+      background: $chosen-black;
       box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 10px;
       &.fixed {
-        background: $background-theme
+        background: $chosen-black
       }
     }
   }
   & > .fixed {
-    background: $background-theme
+    background: $chosen-black
   }
 }
 .lockedNav {
@@ -77,7 +77,7 @@ nav {
     position: fixed;
     z-index: 1;
     &:hover{
-      &nav { background: $background-theme}
+      &nav { background: $chosen-black}
     }
   }
 
@@ -113,20 +113,33 @@ nav {
   align-items: center;
 }
 .logo-box {
-  width: 72px;
+  width: 48px;
   height: 48px;
   display: flex;
   justify-self: center;
   align-self: center;
+  & > #hovered {
+    display: none;
+  }
+  & > #nonHovered {
+      display: block;
+    }
+  &:hover {
+    & > #hovered {
+      display: block;
+    }
+    & > #nonHovered {
+      display: none;
+    }
+  }
 }
 .logo{
   cursor: pointer;
   width: 90%;
   height: 90%;
-  background-image: url("../../../assets/images/logo.svg");
-  background-size: cover;
-  background-position: center;
-
+}
+.primary{
+  background-color: $chosen-blue
 }
 @media screen and (max-width:700px){
   .menuMobile {

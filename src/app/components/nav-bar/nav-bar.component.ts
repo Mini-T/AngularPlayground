@@ -13,7 +13,7 @@ export class NavBarComponent implements OnInit {
   @Input() links?: Link[];
   @Input() canHide?: boolean = false;
   @Input() fixed?: boolean = false;
-  @Input() logoPath?: string
+  @Input() logoPath?: boolean
   hiding: boolean = true;
   showMenu: boolean = false;
   active?: boolean = false;
@@ -26,7 +26,9 @@ export class NavBarComponent implements OnInit {
     this.initComponent();
   }
   openBottomSheet(): void {
-    this.bottomSheet.open(AuthComponent);
+    this.bottomSheet.open(AuthComponent, {
+
+    });
   }
 
   initComponent(){

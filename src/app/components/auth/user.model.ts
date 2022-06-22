@@ -4,6 +4,7 @@ export interface UserModel {
   id?: number,
   email: string,
   roles?: string[],
-  password: string,
+  username?:string
+  password?: string,
   posts?: PostModel
 }

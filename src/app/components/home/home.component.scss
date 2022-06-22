@@ -1,36 +1,30 @@
+@import "src/assets/shared/variables";
+
 main {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
 }
 .displayComponents{
-  display: grid;
+  display: flex;
+  width: auto;
   margin: auto;
-  grid-template: auto auto auto/ 30vw 40vw 30vw;
-  max-height: 100vh;
-  min-height: 50vh;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  grid-auto-rows: 1fr;
-  grid-gap: 10px;
-  grid-template-areas:  "carousel carousel carousel"
-                        ". . ."
-                        ". . .";
+  min-height:50vh ;
+  max-height:100vh ;
+
 }
 .headTitle {
-
+  background: $chosen-blue;
+  color: $chosen-white;
+  box-shadow: black 1px 1Px 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-app-carousel{
-  grid-area: carousel;
-}
-
-@media screen and (max-width: 700px) {
-  .displayComponents {
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
+.separator {
+  width: 90%;
+  margin:auto
 }

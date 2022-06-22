@@ -21,11 +21,14 @@ import { PostComponent } from './components/post-form/post/post.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { PostAnswerComponent } from './components/post-form/post/post-answer/post-answer.component';
 import {
-  MAT_BOTTOM_SHEET_DATA,
+  MAT_BOTTOM_SHEET_DATA, MAT_BOTTOM_SHEET_DEFAULT_OPTIONS,
   MatBottomSheet,
   MatBottomSheetModule,
   MatBottomSheetRef
 } from "@angular/material/bottom-sheet";
+import { FooterComponent } from './components/footer/footer.component';
+import { RegisterFormComponent } from './components/auth/register-form/register-form.component';
+import {ServerStatusModule} from "./components/server-status/server-status.module";
 
 @NgModule({
   declarations: [
@@ -37,27 +40,33 @@ import {
     AuthComponent,
     PostComponent,
     PostFormComponent,
-    PostAnswerComponent
+    PostAnswerComponent,
+    FooterComponent,
+    RegisterFormComponent,
   ],
-  imports: [
-    MatInputModule,
-    HttpClientModule,
-    MatCardModule,
-    BrowserModule,
-    MatBottomSheetModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonToggleModule,
-    FormsModule,
-    MatFormFieldModule
-  ],
-  entryComponents: [AuthComponent],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        MatInputModule,
+        HttpClientModule,
+        MatCardModule,
+        BrowserModule,
+        MatBottomSheetModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        MatListModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        FormsModule,
+        MatFormFieldModule,
+        ServerStatusModule
+    ],
   providers: [
     { provide: MatBottomSheet, useValue: {} },
+    { provide: MatBottomSheetRef, useValue: {} },
+    {provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: {}},
     { provide: MAT_BOTTOM_SHEET_DATA, useValue: {} }
   ],
   bootstrap: [AppComponent]

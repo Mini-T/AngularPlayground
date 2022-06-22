@@ -1,0 +1,252 @@
+@import "src/assets/shared/variables";
+
+.statusBar {
+  transition: all 300ms ease;
+  height: 5VH;
+  min-width: 40vw;
+  width: 60%;
+  cursor: pointer;
+  background-color: $chosen-black;
+  border-radius: 10px;
+  margin: 5px 0 5px 0;
+  padding: 7px;
+  height: fit-content;
+  font-family: 'Montserrat';
+  justify-content: space-around;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 5px 5Px 7px rgba(0, 0, 0, 0.2);
+    background-color: $chosen-black;
+  }
+}
+
+.sheetBg {
+  background-color: $chosen-black;
+  min-width: min-content;
+  width: min-content;
+  max-width: 70vw;
+  justify-content: center;
+  margin: auto;
+  height: fit-content;
+  display: flex;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px -5px rgb(0 0 0 / 20%), 0px 16px 24px 2px rgb(0 0 0 / 14%), 0px 6px 30px 5px rgb(0 0 0 / 12%);
+}
+
+@media only screen and (max-width: 600px) {
+  div.gridConfig {
+    row-gap: 15px;
+    column-gap: 5px;
+  }
+  button.displayMode {
+    &.flexPosition {
+      left: unset;
+      right: 0%;
+      top: 0%;
+    }
+
+    &.gridPosition {
+      left: unset;
+      right: 0%;
+      top: 0%;
+    }
+  }
+}
+
+.flexCards {
+  width: 100%;
+  display: flex;
+}
+
+.gridCards {
+  min-width: 100%;
+  height: fit-content;
+  display: grid;
+
+  grid-template: 5VH min-content 1px / 5fr 1fr 1fr;
+  grid-template-areas:  "server-name pipe state"
+                        "server-ip server-ip server-ip"
+                        "underline underline underline";
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.gridConfig {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 15px;
+  grid-template: max-content max-content max-content / 1FR 1FR 1FR;
+  grid-auto-rows: max-content;
+  min-width: 600PX;
+  height: max-content;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.flexConfig {
+  min-width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.underline {
+  grid-area: underline;
+  position: relative;
+  top: 2vh;
+  width: 70%;
+}
+
+.server-name {
+  order: 1;
+  grid-area: server-name;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.gridPipe {
+  grid-area: pipe;
+  height: 70%;
+  align-self: center;
+  justify-self: center;
+  width: 0px;
+  margin: 10px;
+  border: 1px $chosen-black solid;
+  border-radius: 5px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.pipe {
+  transform: rotate(90deg);
+  height: auto;
+  margin: 10px;
+  width: 2vw;
+  order: 2;
+  border: 1px $chosen-black solid;
+  border-radius: 5px;
+}
+
+.server-ip {
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+  background-color: $chosen-black;
+  width: auto;
+  height: 80%;
+  grid-area: server-ip;
+
+  &.collapsable {
+    order: 2;
+  }
+}
+
+.icons {
+  padding: 10px;
+  height: auto;
+  grid-area: state;
+}
+
+.displayMode {
+  transition: all ease 300ms;
+  cursor: pointer;
+  font-size: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  color: $chosen-black;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.22) 2px 2px 10px;
+
+  &:hover {
+    color: $chosen-white;
+    background-color: $chosen-black;
+  }
+
+  &.gridPosition {
+    right: 2%;
+    top: 2%;
+  }
+
+  &.flexPosition {
+    right: 2%;
+    top: 2%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.icons.running {
+  color: lawngreen;
+  order: 1000;
+}
+
+.icons.down {
+  color: red;
+  order: 1000;
+}
+
+.icons.warning {
+  color: orange;
+  order: 1000;
+}
+
+.WarnBar {
+  border-left: orange 3px solid;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+
+  &.gridCards {
+    border-left: unset;
+    border-radius: 10px;
+  }
+
+  &.underline {
+    border: 1px orange solid;
+  }
+}
+
+.DownBar {
+  border-left: red 3px solid;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+
+  &.gridCards {
+    border-left: unset;
+    border-radius: 10px;
+  }
+
+  &.underline {
+    border: 1px red solid;
+  }
+}
+
+.RunBar {
+  border-left: lawngreen 3px solid;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+
+  &.gridCards {
+    border-left: unset;
+    border-radius: 10px;
+  }
+
+  &.underline {
+    border: 1px lawngreen solid;
+  }
+}

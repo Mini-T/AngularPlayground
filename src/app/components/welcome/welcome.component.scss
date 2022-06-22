@@ -1,5 +1,7 @@
+@import 'src/assets/shared/variables.scss';
+
 .card {
-  background: rgba(255, 255, 255, 0.3);
+  background: $chosen-black;
   border-radius: 1rem;
   width: fit-content;
   min-width: 300px;
@@ -17,6 +19,9 @@
   justify-self: center;
   align-self: center;
 
+}
+.primary{
+  background-color: $chosen_blue;
 }
 .titles{
   display: flex;

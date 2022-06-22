@@ -1,6 +1,8 @@
 <main>
-  <div class="headTitle"> <h1>Items</h1></div>
+  <div class="headTitle"> <h1>Some UI Components</h1></div>
   <div class="displayComponents">
     <app-carousel [itemsToDisplay]="itemsToDisplay" class="app-carousel"></app-carousel>
+    <hr class="separator">
+    <zds-server-status [data]="serversData"></zds-server-status>
   </div>
 </main>

@@ -6,7 +6,8 @@
         <mat-card-title class="card-title" *ngIf="item.title">
           <h1> {{item.title}}</h1>
         </mat-card-title>
-        <img class="card-img" mat-card-image [src]="item.image" *ngIf="item.image">
+        <div class="card-img"
+             *ngIf="item.image"></div>
       <mat-card-content class="card-content" *ngIf="item.content">
         <p>{{item.content}}</p>
       </mat-card-content>
