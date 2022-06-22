@@ -13,7 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
 import { CarouselComponent } from './components/carousel/carousel.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { AuthComponent } from './components/auth/auth.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
@@ -30,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterFormComponent } from './components/auth/register-form/register-form.component';
 import {ServerStatusModule} from "./components/server-status/server-status.module";
 import {MatTabsModule} from "@angular/material/tabs";
+import {TokenInterceptor} from "./token.interceptor";
 
 @NgModule({
   declarations: [
@@ -64,7 +65,9 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatTabsModule
   ],
   providers: [
-    { provide: MAT_BOTTOM_SHEET_DATA, useValue: {} }
+    { provide: MAT_BOTTOM_SHEET_DATA, useValue: {} },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
+    { provide: TokenInterceptor, useValue:{}}
   ],
   bootstrap: [AppComponent]
 })

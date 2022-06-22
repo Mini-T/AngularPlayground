@@ -1,5 +1,5 @@
-<mat-tab [label]="'Login'">
-<div class="loginFormPage">
+
+<div class="loginFormPage" *ngIf="!token">
 <mat-card>
   <mat-form-field [(ngModel)]="email" ngDefaultControl required>
     <mat-label>email</mat-label>
@@ -12,5 +12,6 @@
   <button mat-raised-button color="primary" (click)="submitForm()" type="submit">Login</button>
 </mat-card>
 </div>
-</mat-tab>
+
+<mat-tab *ngIf="user"></mat-tab>
 

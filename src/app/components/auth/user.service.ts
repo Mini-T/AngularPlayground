@@ -10,10 +10,10 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  login(payload:UserModel): Observable<UserModel>{
+  login(payload:UserModel): Observable<Object>{
     return this.http.post<UserModel>('/api/login', payload)
   }
   getUser(): Observable<UserModel> {
-    return this.http.get<UserModel>('/api/login').pipe(tap(user => console.log(user)));
+    return this.http.get<UserModel>('/api/login');
   }
 }

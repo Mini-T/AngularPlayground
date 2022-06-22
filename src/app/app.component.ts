@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Link} from "./components/nav-bar/nav-bar.model";
 import {UserService} from "./components/auth/user.service";
 import {UserModel} from "./components/auth/user.model";
+import {take} from "rxjs";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,9 +34,9 @@ export class AppComponent {
   constructor(private userService: UserService) {
     this.navActive = true
     this.navHiding = true
-    this.userService.getUser().subscribe(user => {
-      this.userModel = user;
-      this.isLoggedIn = true;
-    });
+    // this.userService.getUser().pipe(take(1)).subscribe(user => {
+    //   this.userModel = user;
+    //   this.isLoggedIn = true;
+    // });
   }
 }
