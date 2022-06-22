@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {RegisterService} from "./register.service";
+import {Component, Inject, OnInit} from '@angular/core';
 import {UserModel} from "../user.model";
+import {TokenInterceptor} from "../../../token.interceptor";
+import {UserService} from "../user.service";
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from "@angular/material/bottom-sheet";
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  styleUrls: ['../auth.component.scss']
 })
 export class RegisterFormComponent implements OnInit {
   email: string;
   username: string;
   password: string;
 
-  constructor(private registerService: RegisterService) {
+  constructor(private tokenInterceptor: TokenInterceptor, private userService: UserService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: [], private bottomSheetRef: MatBottomSheetRef<RegisterFormComponent>) {
     this.email = '';
     this.username = '';
     this.password = '';
@@ -27,6 +29,6 @@ export class RegisterFormComponent implements OnInit {
       username: this.username,
       password: this.password
     }
-    this.registerService.register(payload).subscribe()
+    this.userService.register(payload).subscribe()
   }
 }

@@ -16,4 +16,7 @@ export class UserService {
   getUser(): Observable<UserModel> {
     return this.http.get<UserModel>('/api/login');
   }
+  register(payload: UserModel): Observable<Object>{
+    return this.http.post('/api/register', payload)
+  }
 }

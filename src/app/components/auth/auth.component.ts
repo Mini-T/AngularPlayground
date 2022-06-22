@@ -34,7 +34,7 @@ export class AuthComponent implements OnInit {
       next: result => {
         // rediriger comme on le fait avec le eportal pour avoir un login alternatif aussi proche que possible de la solution de production
         // @ts-ignore
-        this.tokenInterceptor.token=result['token']
+        TokenInterceptor.token=result['token']
       },
       error: err => {
         // afficher une erreur
@@ -44,6 +44,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn()
+    this.token = TokenInterceptor.token
   }
 
 }

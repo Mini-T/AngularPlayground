@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Link} from "./nav-bar.model";
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import {AuthComponent} from "../auth/auth.component";
+import {RegisterFormComponent} from "../auth/register-form/register-form.component";
 
 
 @Component({
@@ -25,8 +26,11 @@ export class NavBarComponent implements OnInit {
   constructor(private bottomSheet: MatBottomSheet) {
     this.initComponent();
   }
-  openBottomSheet(): void {
+  openBottomSheetLogin(): void {
     this.bottomSheet.open(AuthComponent, {});
+  }
+  openBottomSheetRegister(): void {
+    this.bottomSheet.open(RegisterFormComponent, {});
   }
 
   initComponent(){
