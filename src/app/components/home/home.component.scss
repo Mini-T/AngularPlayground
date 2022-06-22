@@ -23,8 +23,19 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  &.comp {
+    width: 60%;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+    color: $chosen-black;
+    background: transparent;
+    justify-self:flex-start;
+    box-shadow: unset;
+  }
 }
 .separator {
   width: 90%;
-  margin:auto
+  margin:10px auto 10px auto
 }

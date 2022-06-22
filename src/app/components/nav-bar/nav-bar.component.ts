@@ -26,9 +26,7 @@ export class NavBarComponent implements OnInit {
     this.initComponent();
   }
   openBottomSheet(): void {
-    this.bottomSheet.open(AuthComponent, {
-
-    });
+    this.bottomSheet.open(AuthComponent, {});
   }
 
   initComponent(){

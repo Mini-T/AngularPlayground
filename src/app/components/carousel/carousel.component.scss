@@ -31,9 +31,10 @@
 .card-img {
   background-size: cover;
   background-position: center;
-  min-height: 100px;
+  min-height: 200px;
   max-height: 1000px;
-  width: auto;
+  background-image: url("https://picsum.photos/200/300?random=2");
+  width: 100%;
 }
 .card-content{
 width: 100%;

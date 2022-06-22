@@ -1,8 +1,11 @@
+@import '../../../assets/shared/variables';
+
 .header {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-bottom: black 1px solid;
 }
 .site-footer {
+  justify-self: flex-end;
   background: $chosen-black;
 }

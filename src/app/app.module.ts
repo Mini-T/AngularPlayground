@@ -29,6 +29,7 @@ import {
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterFormComponent } from './components/auth/register-form/register-form.component';
 import {ServerStatusModule} from "./components/server-status/server-status.module";
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -44,29 +45,25 @@ import {ServerStatusModule} from "./components/server-status/server-status.modul
     FooterComponent,
     RegisterFormComponent,
   ],
-    imports: [
-        BrowserAnimationsModule,
-        BrowserModule,
-        MatInputModule,
-        HttpClientModule,
-        MatCardModule,
-        BrowserModule,
-        MatBottomSheetModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatButtonModule,
-        MatListModule,
-        MatIconModule,
-        MatButtonToggleModule,
-        FormsModule,
-        MatFormFieldModule,
-        ServerStatusModule
-    ],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    MatInputModule,
+    HttpClientModule,
+    MatCardModule,
+    MatBottomSheetModule,
+    AppRoutingModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    FormsModule,
+    MatFormFieldModule,
+    ServerStatusModule,
+    MatTabsModule
+  ],
   providers: [
-    { provide: MatBottomSheet, useValue: {} },
-    { provide: MatBottomSheetRef, useValue: {} },
-    {provide: MAT_BOTTOM_SHEET_DEFAULT_OPTIONS, useValue: {}},
     { provide: MAT_BOTTOM_SHEET_DATA, useValue: {} }
   ],
   bootstrap: [AppComponent]

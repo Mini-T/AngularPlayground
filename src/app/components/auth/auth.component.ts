@@ -15,6 +15,9 @@ export class AuthComponent implements OnInit {
 
   constructor(private userService: UserService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: [], private bottomSheetRef: MatBottomSheetRef<AuthComponent>) {}
 
+  isLoggedIn(){
+    this.userService.getUser()
+  }
   submitForm(){
     let payload: UserModel = {
       email: this.email,

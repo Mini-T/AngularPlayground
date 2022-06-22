@@ -9,7 +9,7 @@
     }"
     (click)="changeDisplay()"
   >
-    <i
+    <mat-icon
       style="margin: auto"
       class="fas"
       [ngClass]="{
@@ -17,7 +17,8 @@
         'fa-list': displayGrid === 1
       }"
     >
-    </i>
+      {{ displayGrid ? 'list': 'apps'}}
+    </mat-icon>
   </button>
 
   <div
@@ -63,21 +64,27 @@
         class="gridPipe"
         [ngClass]="{ show: displayGrid === 1, hide: displayGrid === 0 }"
       />
-      <i
+      <mat-icon
         *ngSwitchCase="status.RUNNING"
-        class="fas fa-check icons running"
+        class="icons running"
         matTooltip="Server Running"
-      ></i>
-      <i
+      >
+        check
+      </mat-icon>
+      <mat-icon
         *ngSwitchCase="status.WARNING"
-        class="fas fa-exclamation-triangle icons warning"
+        class="icons warning"
         matTooltip="Problems"
-      ></i>
-      <i
+      >
+        warning
+      </mat-icon>
+      <mat-icon
         *ngSwitchCase="status.DOWN"
-        class="fas fa-times-circle icons down"
+        class="icons down"
         matTooltip="Off"
-      ></i>
+      >
+        close
+      </mat-icon>
 
       <hr
         class="underline"

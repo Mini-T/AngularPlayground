@@ -1,18 +1,19 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import {health, ServerStatusData} from '../server-status-data';
 import {ServerStatusService} from '../server-status.service';
 
 @Component({
 	selector: 'zds-bottom-sheet-overview-example-sheet',
 	templateUrl: 'server-status-sheet.component.html',
-	styleUrls: ['../server-status.component.scss']
+	styleUrls: ['./server-status-sheet.component.scss']
 })
 export class ServerStatusExampleSheetComponent {
 	status = health;
 	displayGrid: number;
 
 	constructor(
+    private bottomSheetRef: MatBottomSheetRef,
 		@Inject(MAT_BOTTOM_SHEET_DATA) public data: ServerStatusData[],
 		private readonly serverStatusService: ServerStatusService
 	) {

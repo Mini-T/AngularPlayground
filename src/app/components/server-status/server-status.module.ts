@@ -9,16 +9,22 @@ export {ServerStatusComponent} from './server-status.component';
 export {ServerStatusData} from './server-status-data';
 export {health} from './server-status-data';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
 	declarations: [ServerStatusExampleSheetComponent, ServerStatusComponent],
 	exports: [ServerStatusExampleSheetComponent, ServerStatusComponent],
-	imports: [
-		CommonModule,
-		MatExpansionModule,
-		MatTooltipModule,
-		MatButtonModule,
-		MatBottomSheetModule,
-	]
+  imports: [
+    BrowserAnimationsModule,
+    CommonModule,
+    MatExpansionModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatIconModule,
+  ]
 })
 export class ServerStatusModule {}

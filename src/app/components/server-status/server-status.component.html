@@ -13,23 +13,29 @@
     </p>
 
     <div class="indicators">
-      <i
+      <mat-icon
         *ngIf="statuses['Running']"
-        class="fas fa-check icons running"
+        class="icons running"
         matTooltip="{{ statuses['Running'] }} Server Running"
-      ></i>
+      >
+        check
+      </mat-icon>
 
-      <i
+      <mat-icon
         *ngIf="statuses['Warning']"
-        class="fas fa-exclamation-triangle icons warning"
+        class="icons warning"
         matTooltip="{{ statuses['Warning'] }} Server Warnings"
-      ></i>
+      >
+        warning
+      </mat-icon>
 
-      <i
+      <mat-icon
         *ngIf="statuses['Down']"
-        class="fas fa-times-circle icons down"
+        class="icons down"
         matTooltip="{{ statuses['Down']}} Server Down"
-      ></i>
+      >
+        close
+      </mat-icon>
     </div>
   </div>
   <ng-template #nodata>
