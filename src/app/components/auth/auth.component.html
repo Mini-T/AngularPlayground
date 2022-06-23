@@ -1,5 +1,5 @@
 
-<div class="loginFormPage" *ngIf="!token">
+<div class="loginFormPage">
 <mat-card>
   <mat-form-field [(ngModel)]="email" ngDefaultControl required>
     <mat-label>email</mat-label>
@@ -9,6 +9,8 @@
     <mat-label>password</mat-label>
     <input matInput type="password">
   </mat-form-field>
+
+  <p style="color: lawngreen" *ngIf="user">Logged as {{user!.username}}</p>
   <button mat-raised-button color="primary" (click)="submitForm()" type="submit">Login</button>
 </mat-card>
 </div>

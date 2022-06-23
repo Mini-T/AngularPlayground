@@ -1,6 +1,8 @@
-<div class="home-theme">
-  <app-nav-bar [links]="links" [fixed]="true" [canHide]="true" [logoPath]="true"></app-nav-bar>
+<main class="home-theme">
+  <app-nav-bar [links]="links" [fixed]="true" [canHide]="false" [logoPath]="true"></app-nav-bar>
+  <section>
     <router-outlet></router-outlet>
+  </section>
   <app-footer></app-footer>
 
-</div>
+</main>

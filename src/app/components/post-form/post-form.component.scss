@@ -12,3 +12,13 @@
   width: 100%;
   background: $chosen-black;
 }
+.postFormLayer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $chosen-black;
+}
+.submit{
+  width: max-content;
+  height: 50px;
+}

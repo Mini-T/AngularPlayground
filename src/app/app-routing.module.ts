@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {WelcomeComponent} from "./components/welcome/welcome.component";
 import {PostFormComponent} from "./components/post-form/post-form.component";
+import {AuthenticationGuard} from './authentication.guard';
+
 
 const routes: Routes = [
   {
@@ -12,7 +14,7 @@ const routes: Routes = [
     path: '', component: WelcomeComponent
   },
   {
-    path: 'social', component: PostFormComponent
+    path: 'social', component: PostFormComponent, canActivate: [AuthenticationGuard]
   },
 ];
 

@@ -12,11 +12,13 @@ import {UserService} from "../auth/user.service";
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
+
+//composant NavBar, simplement, la barre de navigation, je prévois de l'échanger avec une mat-sidenav, plus stable et efficace
 export class NavBarComponent implements OnInit {
   @Input() links?: Link[];
   @Input() canHide?: boolean = false;
   @Input() fixed?: boolean = false;
-  @Input() logoPath?: boolean
+  @Input() logoPath?: boolean;
   hiding: boolean = true;
   showMenu: boolean = false;
   user?: UserModel = this.userService.user
@@ -49,6 +51,7 @@ export class NavBarComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.userService.authenticationRequired.subscribe(() => this.openBottomSheetLogin());
   }
 
 }

@@ -15,9 +15,11 @@ export class RegisterFormComponent implements OnInit {
   password: string;
 
   constructor(private tokenInterceptor: TokenInterceptor, private userService: UserService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: [], private bottomSheetRef: MatBottomSheetRef<RegisterFormComponent>) {
+
     this.email = '';
     this.username = '';
     this.password = '';
+    // si le token existe, le décode et injecte les credentials contenu a l'intérieur dans le service userService
     TokenInterceptor.token ? this.userService.getCredentials(TokenInterceptor.token) : '';
   }
 
@@ -25,11 +27,13 @@ export class RegisterFormComponent implements OnInit {
   }
 
   submit() {
+    //récupère les champs remplis
     let payload: UserModel = {
       email: this.email,
       username: this.username,
       password: this.password
     }
-    this.userService.register(payload).subscribe()
+    // @ts-ignore
+    this.userService.register(payload).subscribe(resp => resp['status'] == 200 ? this.userService.authenticationRequired.next() : console.log('failed to register'))
   }
 }

@@ -14,6 +14,11 @@ nav {
     opacity: 100%;
   }
 }
+.globalNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 
 .menuMobile {
   width: 100%;
@@ -106,7 +111,7 @@ nav {
 }
 .content {
   height: 75%;
-  width: 100%;
+  width: 95vw;
   display: flex;
   justify-content: space-between;
   padding: 15PX;
@@ -143,9 +148,10 @@ nav {
 }
 @media screen and (max-width:700px){
   .menuMobile {
+    position: absolute;
     display: flex;
+    top: 80px;
     height: max-content;
-    position: relative;
   }
   .menuDesktop {
     display: none;
@@ -172,5 +178,6 @@ nav {
   .links {
     flex-wrap: wrap;
     justify-content: flex-start;
+    background-color: #282828;
   }
 }

@@ -34,9 +34,5 @@ export class AppComponent {
   constructor(private userService: UserService) {
     this.navActive = true
     this.navHiding = true
-     this.userService.getUser().pipe(take(1)).subscribe(user => {
-       this.userModel = user;
-       this.userModel ? this.isLoggedIn = true : ''
-     });
   }
 }

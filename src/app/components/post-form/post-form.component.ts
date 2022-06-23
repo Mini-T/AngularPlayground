@@ -10,6 +10,10 @@ import {UserService} from "../auth/user.service";
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.scss']
 })
+
+// composant non terminée, manque de temps :c
+// résumé de l'objectif du composant: faire office de forum avec des posts contenant titre et contenu avec d'autres
+// posts en guise de commentaires et ainsi de suite de façon récursive
 export class PostFormComponent implements OnInit {
   title?: string;
   content?: string;

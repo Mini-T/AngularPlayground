@@ -1,11 +1,14 @@
-@import '../../../assets/shared/variables';
+@use '../../../assets/shared/variables';
 
 .header {
-  width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-bottom: black 1px solid;
+  color: white;
+  margin-left: auto;
 }
+
 .site-footer {
+  background: variables.$chosen-black;
   justify-self: flex-end;
-  background: $chosen-black;
+  padding: 5px;
 }
