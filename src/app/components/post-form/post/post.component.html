@@ -1,12 +1,14 @@
 <div class="postBody">
-  <h3 class="username">{{ author }}</h3>
-  <h1 class="title"> {{ title }} </h1>
-  <h3 class="date"> {{date | date}}</h3>
+  <h3 class="username">{{ post!.author.username }}</h3>
+  <h1 class="title"> {{ post!.title }} </h1>
+  <h3 class="date"> {{post!.date | date}}</h3>
   <p class="content">
-    {{ content }}
+    {{ post!.content }}
   </p>
   <div class="interact">
-    <button mat-icon-button><mat-icon></mat-icon></button>
-
+    <button mat-icon-button><mat-icon>comment</mat-icon></button>
+  </div>
+  <div class="answers">
+ <app-post-answer></app-post-answer>
   </div>
 </div>

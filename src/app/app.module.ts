@@ -31,6 +31,7 @@ import { RegisterFormComponent } from './components/auth/register-form/register-
 import {ServerStatusModule} from "./components/server-status/server-status.module";
 import {MatTabsModule} from "@angular/material/tabs";
 import {TokenInterceptor} from "./token.interceptor";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -62,12 +63,13 @@ import {TokenInterceptor} from "./token.interceptor";
     FormsModule,
     MatFormFieldModule,
     ServerStatusModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [
     { provide: MAT_BOTTOM_SHEET_DATA, useValue: {} },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true},
-    { provide: TokenInterceptor, useValue:{}}
+    { provide: TokenInterceptor, useValue:{}},
+    { provide: DatePipe, useValue: {}}
   ],
   bootstrap: [AppComponent]
 })

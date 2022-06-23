@@ -18,6 +18,7 @@ export class RegisterFormComponent implements OnInit {
     this.email = '';
     this.username = '';
     this.password = '';
+    TokenInterceptor.token ? this.userService.getCredentials(TokenInterceptor.token) : '';
   }
 
   ngOnInit(): void {

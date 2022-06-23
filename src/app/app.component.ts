@@ -26,17 +26,17 @@ export class AppComponent {
         label: "Welcome Screen"
       },
       {
-        url: "post",
-        label: ""
+        url: "/social",
+        label: "Social"
       }
     ]
 
   constructor(private userService: UserService) {
     this.navActive = true
     this.navHiding = true
-    // this.userService.getUser().pipe(take(1)).subscribe(user => {
-    //   this.userModel = user;
-    //   this.isLoggedIn = true;
-    // });
+     this.userService.getUser().pipe(take(1)).subscribe(user => {
+       this.userModel = user;
+       this.userModel ? this.isLoggedIn = true : ''
+     });
   }
 }

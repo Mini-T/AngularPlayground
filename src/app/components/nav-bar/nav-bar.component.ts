@@ -3,6 +3,8 @@ import {Link} from "./nav-bar.model";
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import {AuthComponent} from "../auth/auth.component";
 import {RegisterFormComponent} from "../auth/register-form/register-form.component";
+import {UserModel} from "../auth/user.model";
+import {UserService} from "../auth/user.service";
 
 
 @Component({
@@ -17,14 +19,20 @@ export class NavBarComponent implements OnInit {
   @Input() logoPath?: boolean
   hiding: boolean = true;
   showMenu: boolean = false;
+  user?: UserModel = this.userService.user
   active?: boolean = false;
+  hasToken?: boolean = this.userService.hasToken
 
   event(){
     console.log(this.hiding)
   }
 
-  constructor(private bottomSheet: MatBottomSheet) {
+  constructor(private userService: UserService, private bottomSheet: MatBottomSheet) {
     this.initComponent();
+  }
+
+  logout(){
+    this.userService.logout().subscribe(log => console.log(log))
   }
   openBottomSheetLogin(): void {
     this.bottomSheet.open(AuthComponent, {});

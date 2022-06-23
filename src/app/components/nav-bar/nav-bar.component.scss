@@ -48,7 +48,7 @@ nav {
 }
 .floating {
   display: flex;
-  position: absolute;
+  position: relative;
   height: 160PX;
   width: 100%;
   top: -80px;
@@ -145,6 +145,7 @@ nav {
   .menuMobile {
     display: flex;
     height: max-content;
+    position: relative;
   }
   .menuDesktop {
     display: none;

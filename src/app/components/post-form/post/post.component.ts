@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserModel} from "../../auth/user.model";
+import {PostModel} from "../post.model";
+import {PostFormService} from "../post-form.service";
 
 @Component({
   selector: 'app-post',
@@ -7,14 +9,19 @@ import {UserModel} from "../../auth/user.model";
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-
-  @Input() title?: string;
-  @Input() content?: string;
-  date!: Date;
+  content?: string;
+  title?:string;
+  date!: string;
   author!: UserModel;
+  @Input() post?: PostModel
 
-  constructor() { }
+  constructor(private postsService: PostFormService) {
 
+  }
+
+  getAllPosts(){
+    this.postsService.getAllPosts().subscribe()
+  }
   ngOnInit(): void {
   }
 

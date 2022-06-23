@@ -24,6 +24,7 @@ export class AuthComponent implements OnInit {
       return EMPTY;
     })).subscribe(userResponse => this.user = userResponse);
   }
+
   submitForm(){
     let payload: UserModel = {
       email: this.email,
@@ -32,18 +33,17 @@ export class AuthComponent implements OnInit {
 
     this.userService.login(payload).subscribe({
       next: result => {
-        // rediriger comme on le fait avec le eportal pour avoir un login alternatif aussi proche que possible de la solution de production
         // @ts-ignore
         TokenInterceptor.token=result['token']
+        this.userService.hasToken = true
       },
       error: err => {
-        // afficher une erreur
+        console.log(err)
       }
     })
   }
 
   ngOnInit(): void {
-    this.isLoggedIn()
     this.token = TokenInterceptor.token
   }
 

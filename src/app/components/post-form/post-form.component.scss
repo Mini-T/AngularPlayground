@@ -1,6 +1,14 @@
+@import '../../../assets/shared/variables';
+
 .currentPosts {
   height: max-content;
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.postFormLayer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $chosen-black;
 }
