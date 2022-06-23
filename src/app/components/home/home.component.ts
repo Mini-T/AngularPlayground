@@ -86,23 +86,20 @@ export class HomeComponent implements OnInit {
       title: "Titre du message différent"
     },
     {
-      content: 'big message',
       image: '../../assets/images/BORDERLESS.svg',
-      title: "Big titre"
+      title: "Card avec un titre uniquement"
     },    {
-      content: 'big message',
-      image: '../../assets/images/BORDERLESS.svg',
-      title: "Big titre"
+      content: 'Card sans image',
+      title: "no Image"
     },
     {
-      content: 'big message',
+      content: 'card sans Titre',
       image: '../../assets/images/BORDERLESS.svg',
-      title: "Big titre"
     },
     {
-      content: 'big message',
+      content: 'last card',
       image: '../../assets/images/BORDERLESS.svg',
-      title: "LAAAAAAAAAST"
+      title: "Last"
     }
 
   ]

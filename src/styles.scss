@@ -40,3 +40,9 @@ mat-bottom-sheet-container.mat-bottom-sheet-container{
 }.mat-expansion-panel-body > .mat-expansion-panel-header-description > * {
   color: $chosen-black;
 }
+html{
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
