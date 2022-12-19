@@ -1,5 +1,41 @@
+@import "src/assets/shared/variables";
+
 main {
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+.displayComponents{
+  display: flex;
+  width: auto;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height:50vh ;
+  max-height:100vh ;
+
+}
+.headTitle {
+  background: $chosen-blue;
+  color: $chosen-white;
+  box-shadow: black 1px 1Px 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &.comp {
+    width: 60%;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+    color: $chosen-black;
+    background: transparent;
+    justify-self:flex-start;
+    box-shadow: unset;
+  }
+}
+.separator {
+  width: 90%;
+  margin:10px auto 10px auto
 }

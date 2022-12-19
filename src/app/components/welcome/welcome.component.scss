@@ -1,5 +1,7 @@
+@import 'src/assets/shared/variables.scss';
+
 .card {
-  background: rgba(255, 255, 255, 0.3);
+  background: $chosen-black;
   border-radius: 1rem;
   width: fit-content;
   min-width: 300px;
@@ -9,14 +11,17 @@
 }
 .WelcomeScreen{
   width: fit-content;
-  height: auto;
+
   margin: auto;
   display: flex;
+  height: 100%;
   align-items: center;
-  justify-content: center;
-  justify-self: center;
-  align-self: center;
+  min-height: 50vh;
+  max-height: 100vh
 
+}
+.primary{
+  background-color: $chosen_blue;
 }
 .titles{
   display: flex;

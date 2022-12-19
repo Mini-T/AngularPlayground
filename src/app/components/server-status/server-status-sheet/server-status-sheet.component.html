@@ -1,0 +1,101 @@
+<div class="sheetBg">
+  <button
+    mat-mini-fab
+    class="displayMode"
+    matTooltip="Changer le mode d'affichage"
+    [ngClass]="{
+      gridPosition: displayGrid === 1,
+      flexPosition: displayGrid === 0
+    }"
+    (click)="changeDisplay()"
+  >
+    <mat-icon
+      style="margin: auto"
+      class="fas"
+      [ngClass]="{
+        'fa-border-all': displayGrid === 0,
+        'fa-list': displayGrid === 1
+      }"
+    >
+      {{ displayGrid ? 'list': 'apps'}}
+    </mat-icon>
+  </button>
+
+  <div
+    [ngClass]="{ gridConfig: displayGrid == 1, flexConfig: displayGrid === 0 }"
+  >
+    <div
+      *ngFor="let server of data"
+      class="statusBar"
+      [ngClass]="{
+        gridCards: displayGrid === 1,
+        flexCards: displayGrid === 0,
+        WarnBar: server.health === 'Warning',
+        DownBar: server.health === 'Down',
+        RunBar: server.health === 'Running'
+      }"
+      (click)="openLink($event, server)"
+      [ngSwitch]="server.health"
+    >
+      <h1 class="server-name">Server name : {{ server.name }}</h1>
+      <hr
+        class="pipe"
+        [ngClass]="{ show: displayGrid === 0, hide: displayGrid === 1 }"
+      />
+      <mat-expansion-panel class="collapsable server-ip">
+        <mat-expansion-panel-header>
+          <mat-panel-title> info </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <p>
+            {{ server.info.artifact }} <br />
+            {{ server.info.name }} <br />
+            {{ server.info.time }} <br />
+            {{ server.info.version }} <br />
+            {{ server.info.group }} <br />
+          </p>
+        </mat-panel-description>
+      </mat-expansion-panel>
+      <hr
+        class="pipe"
+        [ngClass]="{ show: displayGrid === 0, hide: displayGrid === 1 }"
+      />
+      <hr
+        class="gridPipe"
+        [ngClass]="{ show: displayGrid === 1, hide: displayGrid === 0 }"
+      />
+      <mat-icon
+        *ngSwitchCase="status.RUNNING"
+        class="icons running"
+        matTooltip="Server Running"
+      >
+        check
+      </mat-icon>
+      <mat-icon
+        *ngSwitchCase="status.WARNING"
+        class="icons warning"
+        matTooltip="Problems"
+      >
+        warning
+      </mat-icon>
+      <mat-icon
+        *ngSwitchCase="status.DOWN"
+        class="icons down"
+        matTooltip="Off"
+      >
+        close
+      </mat-icon>
+
+      <hr
+        class="underline"
+        [ngClass]="{
+          show: displayGrid === 1,
+          hide: displayGrid === 0,
+          DownBar: server.health === 'Down',
+          RunBar: server.health === 'Running',
+          WarnBar: server.health === 'Warning'
+        }"
+      />
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-nav{
+@import 'src/assets/shared/variables.scss';
+
+nav {
   transition: all ease 300ms;
   width: 100%;
   margin-top: 0px;
@@ -8,23 +10,36 @@ nav{
   opacity: 0%;
   justify-content: center;
   align-items: center;
-  &.active {
-    background: rgba(255, 255, 255, 0.16);
+  &.lockedNav {
     opacity: 100%;
-    box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 10px;
   }
 }
+.globalNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
 .menuMobile {
   width: 100%;
   height: 25vw;
   display: none;
 }
 .menuDesktop {
-  width: 75%;
+  width: 85%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+}
+.actions {
+  width: max-content;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+  & > * {
+    margin: 5px;
+  }
 }
 
 .menuBtn {
@@ -36,33 +51,58 @@ nav{
 .hidden {
   display: none
 }
-.floatingNav {
+.floating {
   display: flex;
-  position: absolute;
+  position: relative;
   height: 160PX;
   width: 100%;
   top: -80px;
   left: 0;
   &:hover {
-    & > nav {
+    & > .translateNav {
       transform: translateY(80px);
+      opacity: 100%;
+    }
+    & > nav {
+      background: $chosen-black;
+      box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 10px;
+      &.fixed {
+        background: $chosen-black
+      }
     }
   }
-  &.active {
-    position: relative;
+  & > .fixed {
+    background: $chosen-black
   }
+}
+.lockedNav {
+  transform: translateY(80px);
+  position: relative;
+  &.fixed {
+    position: fixed;
+    z-index: 1;
+    &:hover{
+      &nav { background: $chosen-black}
+    }
+  }
+
 }
 .links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 90%;
+
+  padding-top: 0px;
+
   background-color: rgba(0, 0, 0, 0.1);
   & > mat-list-item {
-    padding: 5px;
+
     width: fit-content;
-    margin: 2.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   overflow-x: scroll;
   &::-webkit-scrollbar {
@@ -70,35 +110,74 @@ nav{
   }
 }
 .content {
-  height: 100%;
-  width: 100%;
+  height: 75%;
+  width: 95vw;
   display: flex;
   justify-content: space-between;
   padding: 15PX;
-  padding-left: 0px;
   align-items: center;
+}
+.logo-box {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  & > #hovered {
+    display: none;
+  }
+  & > #nonHovered {
+      display: block;
+    }
+  &:hover {
+    & > #hovered {
+      display: block;
+    }
+    & > #nonHovered {
+      display: none;
+    }
+  }
+}
+.logo{
+  cursor: pointer;
+  width: 90%;
+  height: 90%;
+}
+.primary{
+  background-color: $chosen-blue
 }
 @media screen and (max-width:700px){
   .menuMobile {
-    display: flex
+    position: absolute;
+    display: flex;
+    top: 80px;
+    height: max-content;
   }
   .menuDesktop {
     display: none;
   }
   .menuBtn {
     display: block;
+    order: -1;
   }
-  .floatingNav {
+  .floating {
     display: flex;
     height: 80px;
     margin-top: unset;
+    position: relative;
     width: 100%;
-    top: unset;
     &:hover {
-      & > nav {
+      & > nav.translateNav {
         transform: unset;
       }
     }
-
+    & > nav {
+      opacity: 100%;
+    }
+  }
+  .links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #282828;
   }
 }

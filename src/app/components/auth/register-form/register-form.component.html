@@ -1,0 +1,19 @@
+<div class="loginFormPage">
+  <mat-card>
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input type="email"  matInput required [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>username</mat-label>
+      <input type="text" required matInput [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>password</mat-label>
+      <input type="password" required matInput [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="submit()">
+      Register
+    </button>
+  </mat-card>
+</div>

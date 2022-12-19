@@ -1,7 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/shared/variables.scss';
 
 html, body { height: 100vh; width: 100vw }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 mat-list-base {
   padding: unset;
+}
+mat-bottom-sheet-container.mat-bottom-sheet-container{
+  transition: all ease-in 300ms;
+  width: fit-content;
+  overflow-x: hidden;
+  /* width */
+  &::-webkit-scrollbar {
+    border-radius: 6px;
+    width: 5px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+    &:hover {
+      background: #555;
+    }
+  }
+  height: auto;
+  padding: 2VW;
+  background: transparent;
+  box-shadow: none;
+
+}
+.mat-expansion-panel-header > .mat-content > * {
+  color: $chosen-black;
+}.mat-expansion-panel-body > .mat-expansion-panel-header-description > * {
+  color: $chosen-black;
+}
+html{
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
